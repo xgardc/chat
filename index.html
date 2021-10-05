@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/app.js" defer></script>
+    <title>Xanky</title>
+  </head>
+  <body class="bg-light">
+    <button id="dark-mode-toggler" class="position-absolute start-0 btn btn-lg">
+      <i class="fas fa-adjust h1"></i>
+    </button>
+    <div id="name-input-area" class="h-100">
+      <div class="container py-4 pt-5">
+        <form
+          id="name-form"
+          class="row h-100 align-items-center bg-white border"
+        >
+          <div class="col-md-6 offset-md-3">
+            <input
+              type="text"
+              id="name-input"
+              class="form-control text-center py-2"
+              placeholder="Adını gir..."
+            />
+            <div class="col-md-6 offset-md-3 text-center py-4">
+              <button class="btn border border-secondary">Sohbete Başla</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="message-area" class="h-100">
+      <div class="container py-4">
+        <div class="row">
+          <div
+            class="col-md-12 h-100 bg-white d-flex flex-column p-4 pb-1 border"
+          >
+            <ul id="messages" class="list-group h-90 overflow-auto"></ul>
+            <form class="d-flex" id="message-form">
+              <input
+                type="text"
+                id="message-input"
+                class="form-control py-2"
+                placeholder="mesaj"
+              />
+              <button class="btn btn-light border" type="submit">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+            <div
+              class="footer d-flex align-items-center justify-content-center"
+            >
+              <p class="h6 opacity-50 text-center pt-2">prod by xgârd!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
