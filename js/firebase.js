@@ -14,11 +14,9 @@ let database = undefined;
 const connectToFirebase = () => {
   !database && firebase.initializeApp(firebaseConfig);
   database = firebase.database().ref("messages");
-  database.on("child_added", (snapshot) => {
-    const values = snapshot.val();
-    try {
-      refreshMessages(values);
-    } catch (e) {}
+  database.on("child_added", (data) => refreshMessages(data.val()));
+  database.on("child_removed", (data) => {
+    refreshMessages(data.val());
   });
 };
 
