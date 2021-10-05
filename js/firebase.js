@@ -14,9 +14,9 @@ let database = undefined;
 const connectToFirebase = () => {
   !database && firebase.initializeApp(firebaseConfig);
   database = firebase.database().ref("messages");
-  database.on("child_added", (data) => refreshMessages(data.val()));
+  database.on("child_added", (data) => refreshMessages("new", data.val()));
   database.on("child_removed", (data) => {
-    refreshMessages(data.val());
+    refreshMessages("delete", data.val());
   });
 };
 

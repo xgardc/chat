@@ -1,5 +1,8 @@
-const refreshMessages = (message) => {
-  messages.innerHTML += `
+const refreshMessages = (event, message) => {
+  event === "delete" && (messages.innerHTML = "");
+  event === "new" &&
+    (() => {
+      messages.innerHTML += `
     <li
       class="
         list-group-item
@@ -12,12 +15,13 @@ const refreshMessages = (message) => {
       <div class="w-25 p-3 border-end">${message.author}</div>
       <div class="w-75 p-3">${message.content}</div>
     </li>`;
-  setTimeout(() => {
-    messages.scroll({
-      behavior: "smooth",
-      top: 99999999999999999999999999999999999,
-    });
-  }, 100);
+      setTimeout(() => {
+        messages.scroll({
+          behavior: "smooth",
+          top: 99999999999999999999999999999999999,
+        });
+      }, 100);
+    })();
 };
 
 const formatDate = (stamp) => {
